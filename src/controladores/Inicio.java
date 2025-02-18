@@ -1,6 +1,6 @@
 package controladores;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 import dtos.ClienteDto;
@@ -14,7 +14,7 @@ import servicios.MenuInterfaz;
 public class Inicio {
 
 	public static Scanner scanner = new Scanner(System.in);
-	public static ArrayList<ClienteDto> clientes = new ArrayList<ClienteDto>();
+	public static HashMap<Long,ClienteDto> clientes = new HashMap<Long,ClienteDto>();
 	
 	public static void main(String[] args) {
 		MenuInterfaz menu = new MenuImplementacion();

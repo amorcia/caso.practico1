@@ -8,44 +8,52 @@ public class ClienteImplementacion implements ClienteInterfaz {
 	public static final char[] LETRA = { 'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S',
 			'Q', 'V', 'H', 'L', 'C', 'K', 'E' };
 	public static byte intentos = 0;
-
+	public static long id = 0;
+	
 	@Override
 	public void nuevoCliente() {
-		intentos++;
-		ClienteDto cliente = new ClienteDto();
-		System.out.println("Introduzca su DNI con la letra en mayúscula: ");
-		cliente.setDni(Inicio.scanner.next());
-		String dni = cliente.getDni();
-		System.out.println("Introduzca su nombre completo: ");
-		Inicio.scanner.nextLine();
-		String nombreCompleto = Inicio.scanner.nextLine();
-		cliente.setNombreCompleto(nombreCompleto);
-		System.out.println("Introduzca su email: ");
-		cliente.setEmail(Inicio.scanner.next());
-		System.out.println("Introduzca su contraseña: ");
-		cliente.setContraseña(Inicio.scanner.next());
+	    intentos++;
+	    ClienteDto cliente = new ClienteDto();
+	    System.out.println("Introduzca su DNI con la letra en mayúscula: ");
+	    String dni = Inicio.scanner.next();
 
-		// Lista para partir el nombre completo
-		String[] listaString = nombreCompleto.split(" ");
-		String nombre = listaString[0];
-		String apellido1 = listaString[1];
+	    // Validamos que el DNI no esté ya en uso
+	    while (comprobarDniUsado(dni)) {
+	        System.out.println("Introduzca un nuevo DNI (el anterior ya está registrado): ");
+	        dni = Inicio.scanner.next();
+	    }
+	    
+	    cliente.setDni(dni);
 
-		if (listaString.length == 3) {
-			String apellido2 = listaString[2];
-			cliente.setApellido2(apellido2);
-		} else {
-			cliente.setApellido2("");
-		}
+	    System.out.println("Introduzca su nombre completo: ");
+	    Inicio.scanner.nextLine(); // Limpiar el buffer
+	    String nombreCompleto = Inicio.scanner.nextLine();
+	    cliente.setNombreCompleto(nombreCompleto);
+	    System.out.println("Introduzca su email: ");
+	    cliente.setEmail(Inicio.scanner.next());
+	    System.out.println("Introduzca su contraseña: ");
+	    cliente.setContraseña(Inicio.scanner.next());
 
-		cliente.setNombre(nombre);
-		cliente.setApellido1(apellido1);
+	    // Lista para partir el nombre completo
+	    String[] listaString = nombreCompleto.split(" ");
+	    String nombre = listaString[0];
+	    String apellido1 = listaString[1];
 
-		Inicio.clientes.add(cliente);
-		validarDni(dni);
-		if(intentos >= 2) {
-		comprobarDniUsado(dni);
-		}
+	    if (listaString.length == 3) {
+	        String apellido2 = listaString[2];
+	        cliente.setApellido2(apellido2);
+	    } else {
+	        cliente.setApellido2("");
+	    }
+
+	    cliente.setNombre(nombre);
+	    cliente.setApellido1(apellido1);
+
+	    Inicio.clientes.put(++id, cliente);
+	    System.out.println("Cliente registrado correctamente.");
+	   
 	}
+
 
 	public static String validarDni(String dni) {
 		String dniAVerificar = dni.substring(0, 8);
@@ -61,24 +69,18 @@ public class ClienteImplementacion implements ClienteInterfaz {
 		}
 		return dni;
 	}
-
-	private long calcularId() {
-		long id;
-		long idAuxiliar = 0;
-		id = idAuxiliar + 1;
-		idAuxiliar = id;
-		return id;
-	}
 	
-	private void comprobarDniUsado(String dniAComprobar) {
-		for(ClienteDto cliente : Inicio.clientes) {
-			if(cliente.getDni().equals(dniAComprobar)) {
-				System.out.println("Dni ya registrado.\n");
-				System.out.println("Introduzca de nuevo el Dni: ");
-				cliente.setDni(Inicio.scanner.next());
-			}
-		}
+	private boolean comprobarDniUsado(String dniAComprobar) {
+	    for(Long idCliente : Inicio.clientes.keySet()) {
+	        ClienteDto cliente = Inicio.clientes.get(idCliente);
+	        if(cliente.getDni().equals(dniAComprobar)) {
+	            System.out.println("DNI ya registrado.\n");
+	            return true;
+	        }
+	    }
+	    return false;
 	}
+
 
 	@Override
 	public void accederCliente() {
@@ -88,7 +90,8 @@ public class ClienteImplementacion implements ClienteInterfaz {
 			String emailAComprobar = Inicio.scanner.next();
 			System.out.println("Introduzca su contraseña: ");
 			String contraseñaAComprobar = Inicio.scanner.next();
-			for (ClienteDto cliente : Inicio.clientes) {
+			for(Long idCliente : Inicio.clientes.keySet()) {
+				ClienteDto cliente = Inicio.clientes.get(idCliente);
 				String email = cliente.getEmail();
 				String contraseña = cliente.getContraseña();
 				intentos++;

@@ -1,6 +1,6 @@
 package dtos;
 
-public class ClienteDto {
+public class ClienteDto implements Comparable<ClienteDto> {
 	long id;
 	String dni;
 	String nombreCompleto;
@@ -87,5 +87,12 @@ public class ClienteDto {
 				"\n".concat("%%%%%%%%%%");
 	}
 	
+	@Override
+	public int compareTo(ClienteDto o) {
+	    if (o == null) {
+	        System.err.println("No se puede comparar con un objeto nulo");
+	    }
+	    return o.apellido1.compareTo(this.apellido1);
+	}
 	
 }
