@@ -1,0 +1,34 @@
+2025-02-19 10:11:29
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERFJSFS"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:27)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-19 10:12:27
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERTYUIO"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:51)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-19 10:14:13
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERTYUIO"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:69)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:51)
+controladores.Inicio.main(Inicio.java:39)
+

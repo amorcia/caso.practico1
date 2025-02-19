@@ -10,7 +10,7 @@ import dtos.ClienteDto;
 public class EmpleadoImplementacion implements EmpleadoInterfaz {
 
 	@Override
-	public void validarCliente() {
+	public void validarCliente() throws Exception {
 		for(Long idCliente : Inicio.clientes.keySet()) {
 			ClienteDto cliente = Inicio.clientes.get(idCliente);
 			if(cliente.isEsValidado() == false) {
@@ -29,7 +29,7 @@ public class EmpleadoImplementacion implements EmpleadoInterfaz {
 	}
 
 	@Override
-	public void borrarCliente() {
+	public void borrarCliente() throws Exception {
 		ClienteImplementacion clienteImp = new ClienteImplementacion();
 		long clienteABorrar = 0;
 		boolean esInexistente = true;
@@ -53,7 +53,7 @@ public class EmpleadoImplementacion implements EmpleadoInterfaz {
 	}
 
 	@Override
-	public void mostrarClientes() {
+	public void mostrarClientes() throws Exception {
 		System.out.println("1.Orden Descendente");
 		System.out.println("2.Orden Ascendente");
 		System.out.println("¿De que forma quiere ver ordenados los clientes?");
@@ -67,7 +67,7 @@ public class EmpleadoImplementacion implements EmpleadoInterfaz {
 	}
 
 	@Override
-	public void ordenarDesc() {
+	public void ordenarDesc() throws Exception {
 		TreeSet<ClienteDto> clientesOrdenados = new TreeSet<>((cliente1, cliente2) -> 
         cliente2.getApellido1().compareTo(cliente1.getApellido1()) // Comparación descendente
     );
@@ -87,7 +87,7 @@ public class EmpleadoImplementacion implements EmpleadoInterfaz {
 	}
 
 	@Override
-	public void ordenarAsc() {
+	public void ordenarAsc() throws Exception {
 	    // Convertir los clientes del HashMap en una lista
 	    List<ClienteDto> listaClientes = new ArrayList<>(Inicio.clientes.values());
 

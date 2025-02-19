@@ -11,7 +11,7 @@ public class ClienteImplementacion implements ClienteInterfaz {
 	public static long id = 0;
 	
 	@Override
-	public void nuevoCliente() {
+	public void nuevoCliente() throws Exception {
 	    intentos++;
 	    ClienteDto cliente = new ClienteDto();
 	    System.out.println("Introduzca su DNI con la letra en mayúscula: ");
@@ -48,6 +48,7 @@ public class ClienteImplementacion implements ClienteInterfaz {
 
 	    cliente.setNombre(nombre);
 	    cliente.setApellido1(apellido1);
+	    validarDni(cliente.getDni());
 
 	    Inicio.clientes.put(++id, cliente);
 	    System.out.println("Cliente registrado correctamente.");
@@ -55,7 +56,7 @@ public class ClienteImplementacion implements ClienteInterfaz {
 	}
 
 
-	public static String validarDni(String dni) {
+	public static String validarDni(String dni) throws Exception {
 		String dniAVerificar = dni.substring(0, 8);
 		int dniSinLetra = Integer.parseInt(dniAVerificar);
 		char letraComprobada = LETRA[dniSinLetra % 23];
@@ -70,7 +71,7 @@ public class ClienteImplementacion implements ClienteInterfaz {
 		return dni;
 	}
 	
-	private boolean comprobarDniUsado(String dniAComprobar) {
+	private boolean comprobarDniUsado(String dniAComprobar) throws Exception {
 	    for(Long idCliente : Inicio.clientes.keySet()) {
 	        ClienteDto cliente = Inicio.clientes.get(idCliente);
 	        if(cliente.getDni().equals(dniAComprobar)) {
@@ -83,7 +84,7 @@ public class ClienteImplementacion implements ClienteInterfaz {
 
 
 	@Override
-	public void accederCliente() {
+	public void accederCliente() throws Exception {
 		intentos = 0;
 		do {
 			System.out.println("Introduzca su email: ");

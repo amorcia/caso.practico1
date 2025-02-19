@@ -1,6 +1,6 @@
 package servicios;
 
 public interface ClienteInterfaz {
-	void nuevoCliente();
-	void accederCliente();
+	void nuevoCliente() throws Exception;
+	void accederCliente() throws Exception;
 }
