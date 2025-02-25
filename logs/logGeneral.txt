@@ -1,0 +1,25 @@
+2025-02-25 10:09:26
+Opcion 1 seleccionada
+Se ha seleccionado el menú cliente
+2025-02-25 10:09:30
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: Index 1 out of bounds for length 1
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:40)
+controladores.Inicio.main(Inicio.java:41)
+
+2025-02-25 10:09:37
+Opcion 1 seleccionada
+Se ha seleccionado el menú cliente
+2025-02-25 10:09:46
+Opcion 1 seleccionada
+Se ha accedido al metodo de alta Cliente
+2025-02-25 10:09:52
+Opcion 2 seleccionada
+Se ha seleccionado el menu empleado
+2025-02-25 10:09:56
+Opcion 1 seleccionada
+Se ha accedido al metodo de validación del cliente
+2025-02-25 10:10:02
+Opcion 1 seleccionada
+Se ha seleccionado el menú cliente

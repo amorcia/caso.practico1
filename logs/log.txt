@@ -1,0 +1,7 @@
+2025-02-24 13:36:47
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: Index 1 out of bounds for length 1
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:40)
+controladores.Inicio.main(Inicio.java:39)
+

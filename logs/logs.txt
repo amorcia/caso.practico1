@@ -1,0 +1,54 @@
+2025-02-24 13:00:25
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERTYYUI"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:51)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-24 13:01:53
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: Index 1 out of bounds for length 1
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:40)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-24 13:04:31
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERTGEIG"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:51)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-24 13:10:05
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: For input string: "AERTYUOF"
+java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:67)
+java.base/java.lang.Integer.parseInt(Integer.java:588)
+java.base/java.lang.Integer.parseInt(Integer.java:685)
+servicios.ClienteImplementacion.validarDni(ClienteImplementacion.java:61)
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:51)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-24 13:30:34
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: Index 1 out of bounds for length 1
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:40)
+controladores.Inicio.main(Inicio.java:39)
+
+2025-02-24 13:31:25
+[ERROR - servicios.Cliente.nuevoCliente()] 
+Método alta del cliente
+ERROR: Index 1 out of bounds for length 1
+servicios.ClienteImplementacion.nuevoCliente(ClienteImplementacion.java:40)
+controladores.Inicio.main(Inicio.java:39)
+
